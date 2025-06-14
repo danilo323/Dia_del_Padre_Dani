@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./index.css">
+  <title>Día del Padre - Mensajes Especiales</title>
+</head>
+<body>
+
+  <h1>🎉 Día del Padre - Mensajes Especiales 👨‍👧‍👦💙</h1>
+  
+  <!-- Elementos decorativos flotantes -->
+  <div class="decorative-elements">
+    <div class="balloon balloon-1">🎈</div>
+    <div class="balloon balloon-2">🎈</div>
+    <div class="balloon balloon-3">🎈</div>
+    <div class="heart heart-1">💙</div>
+    <div class="heart heart-2">❤️</div>
+    <div class="heart heart-3">💛</div>
+    <div class="star star-1">⭐</div>
+    <div class="star star-2">✨</div>
+    <div class="star star-3">🌟</div>
+    <div class="gift gift-1">🎁</div>
+    <div class="gift gift-2">🎁</div>
+    <div class="crown crown-1">👑</div>
+    <div class="trophy trophy-1">🏆</div>
+  </div>
+
+  <section class="cards-container">
+    <article class="card" role="region" aria-label="Mensaje uno para el Día del Padre">
+      <div class="card-text">
+        <p>💙 "Papá, gracias por tu amor incondicional y por ser mi ejemplo a seguir. ¡Feliz Día del Padre!"</p>
+      </div>
+      <div class="card-image" onclick="openModal(0)">
+        <img src="./img/imagen1.jpeg" alt="yo con mi apa en riobamba" />
+      </div>
+    </article>
+
+    <article class="card" role="region" aria-label="Mensaje dos para el Día del Padre">
+      <div class="card-text">
+        <p>Querido papá, gracias por enseñarme con el corazón y estar siempre conmigo. ¡Te quiero mucho!</p>
+      </div>
+      <div class="card-image" onclick="openModal(1)">
+        <img src="./img/imagen2.jpg" alt="en la virgen del sagrario " />
+      </div>
+    </article>
+
+    <article class="card" role="region" aria-label="Mensaje tres para el Día del Padre">
+      <div class="card-text">
+        <p>Gracias por ser el papá más increíble y el amigo más fiel. ¡Feliz Día del Padre!</p>
+      </div>
+      <div class="card-image" onclick="openModal(2)">
+        <img src="./img/imagen3.png" alt="En el dia de mi comunion estando ahi para mi" />
+      </div>
+    </article>
+  </section>
+
+
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <button class="nav-btn prev-btn" onclick="changeImage(-1)">&#8249;</button>
+      <img id="modalImage" src="" alt="">
+      <button class="nav-btn next-btn" onclick="changeImage(1)">&#8250;</button>
+      <div class="image-description">
+        <p id="imageDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-wrapper">
+    <button class="youtube-section" aria-expanded="false" aria-controls="video-embed" aria-label="Mostrar video especial para Papá">
+      <svg class="youtube-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M10 15l5.19-3L10 9v6z"/>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M21.8 8s-.2-1.6-.82-2.28c-.78-.82-1.66-.83-2.06-.88C15.54 5 12 5 12 5s-3.54 0-6.92.09c-.4.05-1.28.06-2.06.88C2.4 6.4 2.2 8 2.2 8S2 9.68 2 11.36v1.29C2 14.3 2.2 16 2.2 16s.2 1.6.82 2.29c.78.83 1.8.8 2.25.89 1.63.12 6.93.09 6.93.09s3.53 0 6.89-.09c.43-.09 1.47-.06 2.24-.89.62-.68.82-2.29.82-2.29s.2-1.7.2-3.38v-1.28c0-1.7-.2-3.38-.2-3.38z"/>
+      </svg>
+      Reproducir Video
+    </button>
+    <div id="video-embed" class="video-container" hidden data-video-url="https://www.youtube.com/embed/69VStYa0aBA">
+    </div>
+  </div>
+
+
+  <div class="certificate-section" onclick="window.open('./certificado.html', '_blank')">
+    <svg class="certificate-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    </svg>
+    📜 Ver Certificado "Al Mejor Papá del Mundo"
+  </div>
+
+  <!-- Scripts -->
+  <script src="./index.js"></script>
+  <script src="./app.js"></script>
+
+</body>
+</html>

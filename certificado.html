@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado al Mejor Papá del Mundo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            font-family: 'Times New Roman', serif;
+        }
+        .certificate {
+            background: white;
+            padding: 50px;
+            width: 800px;
+            text-align: center;
+            border: 20px solid #ffd700;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        }
+        .header {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .seal {
+            font-size: 100px;
+            margin: 20px 0;
+            color: #ffd700;
+        }
+        .title {
+            font-size: 48px;
+            color: #ff6b6b;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .description {
+            font-size: 24px;
+            color: #666;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .date {
+            font-size: 20px;
+            color: #888;
+            margin-top: 40px;
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .certificate {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <div class="header">Certificado de Reconocimiento</div>
+        <div class="seal">👑</div>
+        <div class="title">Al Mejor Papá del Mundo</div>
+        <div class="description">
+            Se otorga este certificado en reconocimiento a un padre excepcional,<br>
+            quien con su amor, dedicación y sacrificio ha demostrado ser<br>
+            el mejor papá que un hijo podría desear.
+        </div>
+        <div class="date">Día del Padre 2025</div>
+</div>
+
+<!-- Botón de descarga -->
+<button onclick="generatePDF()" class="download-btn">
+    📥 Descargar PDF
+</button>
+
+<style>
+.download-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function generatePDF() {
+    const element = document.querySelector('.certificate');
+    const opt = {
+        margin: 0.5,
+        filename: 'Certificado_Mejor_Papa_del_Mundo.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+    };
+    
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+</body>
+</html>
